@@ -19,4 +19,5 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('refresh', 'AuthController@refresh');
     $router->post('me', 'AuthController@me');
     $router->get('user/{id}', ['middleware' => 'auth:api', 'uses' => 'UserController@show']);
+    $router->put('user/profile/{id}', ['middleware' => 'auth:api', 'uses' => 'UserController@profile']);
 });
